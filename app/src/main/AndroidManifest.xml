@@ -10,13 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelExpence">
         <activity
-            android:name=".SignUpScreen"
+            android:name=".Login.MakeSelection"
             android:exported="true" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".Login.ForgetPassword"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login.SignUpScreen"
+            android:exported="true" />
+        <activity
+            android:name=".Login.LoginScreen"
+            android:exported="true" />
+        <activity
+            android:name="com.example.Common.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

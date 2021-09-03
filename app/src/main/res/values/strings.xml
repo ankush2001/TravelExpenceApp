@@ -4,4 +4,13 @@
     <string name="hello">HELLO</string>
     <string name="username">Username</string>
     <string name="forget_password">Forget Password</string>
+    <string name="provider_password">provide your account\'s email for which you want to reset your password</string>
+    <string name="next">NEXT</string>
+    <string name="welcome">Welcome</string>
+    <string name="save_money_Signip">Sign up to save your money during travel</string>
+    <string name="full_name">Full Name</string>
+    <string name="make_selection">Make Selection</string>
+    <string name="verify_is_it_you">Verify is it you?</string>
+    <string name="user_name_password">User Name / Password</string>
+    <string name="password">Password</string>
 </resources>

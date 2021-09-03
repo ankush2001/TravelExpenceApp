@@ -4,24 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpScreen"
+    tools:context=".Login.SignUpScreen"
     android:background="#fff"
     android:orientation="vertical"
     android:padding="20dp">
 
+    <ImageView
+        android:id="@+id/back_icon"
+        android:layout_width="79dp"
+        android:layout_height="59dp"
+        android:layout_gravity="left"
+        android:src="@drawable/back_icon" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:textSize="40sp"
         android:textColor="#000"
         android:textStyle="italic"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="2dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign up to save your money during travel"
+        android:text="@string/save_money_Signip"
         android:textColor="#000"
         android:textSize="17sp"/>
     <LinearLayout
@@ -34,8 +41,10 @@
            android:id="@+id/reg_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             app:boxStrokeWidth="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -52,6 +61,8 @@
             app:counterEnabled="true"
             app:counterMaxLength="15"
             app:boxStrokeWidth="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -69,6 +80,8 @@
             android:hint="Email"
             android:textColor="#000"
             app:boxStrokeWidth="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -85,6 +98,7 @@
             android:hint="Password"
             app:passwordToggleEnabled="true"
             app:boxStrokeWidth="2dp"
+
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
