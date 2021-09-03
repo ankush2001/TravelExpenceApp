@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TravelExpence</string>
+    <string name="hello_their">Hello Their!</string>
+    <string name="hello">HELLO</string>
+    <string name="username">Username</string>
+    <string name="forget_password">Forget Password</string>
+</resources>
