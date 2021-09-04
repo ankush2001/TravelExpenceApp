@@ -128,5 +128,12 @@
         android:text="Already have account? login"
         android:textColor="#000"
         android:textStyle="bold" />
-
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_gravity="center"
+        android:layout_marginTop="-270dp"
+        android:visibility="invisible"/>
 </LinearLayout>

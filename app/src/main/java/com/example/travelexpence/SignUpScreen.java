@@ -1,5 +1,6 @@
 package com.example.travelexpence;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,15 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpScreen extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
-
+    private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
     Button alreadyAccount,regButton;
     TextInputLayout regName,regUsername,regEmail,regPassword;
     @Override
@@ -23,6 +31,10 @@ public class SignUpScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        mAuth = FirebaseAuth.getInstance();
+        progressBar = findViewById(R.id.progress_bar);
+
         regName = findViewById(R.id.reg_name);
         regUsername= findViewById(R.id.reg_username);
         regEmail = findViewById(R.id.reg_email);
@@ -105,6 +117,7 @@ public class SignUpScreen extends AppCompatActivity {
     }
 
     public void registerUser(View view){
+
         if(!validateEmail() | !validateName() | !validateUserName() | !validatePassword()){
             return;
         }
@@ -114,9 +127,31 @@ public class SignUpScreen extends AppCompatActivity {
         String userName = regUsername.getEditText().getText().toString();
         String email = regEmail.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
-        userHelperClass helperClass = new userHelperClass(fullName,userName,password,email);
-        mDatabase.child("users").child(userName).setValue(helperClass);
+
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            userHelperClass helperClass = new userHelperClass(fullName,userName,password,email);
+                            mDatabase.child("users").child(userName).setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(SignUpScreen.this, "Registration Successfully!", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.VISIBLE);
+                                    }else {
+                                        Toast.makeText(SignUpScreen.this, "Registration Unsuccessfully Please Try Again!", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+                        }else {
+                            Toast.makeText(SignUpScreen.this, "Registration Unsuccessfully Please Try Again!", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+
     }
-
-
 }
