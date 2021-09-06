@@ -30,7 +30,7 @@ public class ForgetPassword extends AppCompatActivity {
                 if(!validateEmail()){
                     return;
                 }
-                Intent intent = new Intent(ForgetPassword.this, MakeSelection.class);
+                Intent intent = new Intent(ForgetPassword.this, code_page.class);
                 startActivity(intent);
             }
         });

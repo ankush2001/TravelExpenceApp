@@ -10,14 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelExpence" >
         <activity
+            android:name=".Login.code_page"
+            android:exported="true" />
+        <activity
             android:name="com.example.Common.main_screen"
             android:exported="true" />
-        <activity
-            android:name="com.example.Common.ViewPafe"
-            android:exported="true" />
-        <activity
-            android:name=".Login.MakeSelection"
-            android:exported="true" />
+
         <activity
             android:name=".Login.ForgetPassword"
             android:exported="true" />
