@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginScreen"
+    tools:context=".Login.LoginScreen"
     android:orientation="vertical"
     android:background="#F6F6F3"
     android:padding="20dp">
@@ -43,10 +43,10 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/username"
-                android:textColor="#000">
+                android:hint="@string/username">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -57,12 +57,14 @@
             app:passwordToggleEnabled="true"
             app:boxStrokeWidth="2dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:textColor="#000"
-                android:inputType="textPassword">
+                android:inputType="textPassword"
+                android:textColor="#000">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -87,16 +89,19 @@
         android:elevation="0dp"
         android:layout_margin="5dp"
         android:textColor="#000"/>
+
     <Button
+        android:id="@+id/go"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0A0A0A"
-        android:text="GO"
-        android:textColor="#fff"
         android:layout_gravity="right"
-        android:elevation="0dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:background="#0A0A0A"
+        android:elevation="0dp"
+        android:text="GO"
+        android:onClick="userLogin"
+        android:textColor="#fff" />
 
     <Button
         android:id="@+id/signUpButton"
@@ -108,6 +113,14 @@
         android:elevation="0dp"
         android:text="NEW USER? SIGN UP"
         android:textColor="#000" />
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_gravity="center"
+        android:layout_marginTop="-270dp"
+        android:visibility="invisible"/>
 
 
 </LinearLayout>

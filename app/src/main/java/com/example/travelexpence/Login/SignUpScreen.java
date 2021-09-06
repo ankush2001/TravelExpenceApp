@@ -135,6 +135,7 @@ public class SignUpScreen extends AppCompatActivity {
         String password = regPassword.getEditText().getText().toString();
 
         progressBar.setVisibility(View.VISIBLE);
+
         mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
