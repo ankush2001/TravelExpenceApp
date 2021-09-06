@@ -139,7 +139,7 @@ public class SignUpScreen extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    com.example.travelexpence.userHelperClass helperClass = new com.example.travelexpence.userHelperClass(fullName,userName,password,email);
+                    userHelperClass helperClass = new userHelperClass(fullName,userName,password,email);
                     mDatabase.child("users").child(userName).setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
