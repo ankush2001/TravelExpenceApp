@@ -25,7 +25,7 @@
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign in to continue"
+        android:text="Login in to continue"
         android:textSize="20sp"/>
     <LinearLayout
         android:background="#00000000"
@@ -41,6 +41,8 @@
             android:id="@+id/username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            app:hintTextColor="@color/white"
+            app:startIconDrawable="@drawable/email_icon"
+            app:startIconTint="@color/white"
             android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -60,6 +62,8 @@
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/white"
             android:textColorHint="@color/white"
+            app:startIconTint="@color/white"
+            app:startIconDrawable="@drawable/small_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText

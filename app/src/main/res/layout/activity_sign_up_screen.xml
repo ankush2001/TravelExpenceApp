@@ -28,6 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="@string/save_money_Signip"
         android:textColor="#FAF6F6"
         android:textSize="17sp" />
@@ -35,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         >
         <com.google.android.material.textfield.TextInputLayout
@@ -48,6 +49,8 @@
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
             android:textColorHint="@color/white"
+            app:startIconDrawable="@drawable/full_name"
+            app:startIconTint="@color/white"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -68,6 +71,8 @@
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
             android:textColorHint="@color/white"
+            app:startIconDrawable="@drawable/email_icon"
+            app:startIconTint="@color/white"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -86,6 +91,8 @@
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/white"
             android:textColorHint="@color/white"
+            app:startIconDrawable="@drawable/small_password"
+            app:startIconTint="@color/white"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 

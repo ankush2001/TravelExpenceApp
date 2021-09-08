@@ -41,8 +41,8 @@ public class ForgetPassword extends AppCompatActivity {
                     return;
                 }
                 resetPassword();
-                Intent intent = new Intent(ForgetPassword.this, code_page.class);
-                startActivity(intent);
+//                Intent intent = new Intent(ForgetPassword.this, code_page.class);
+//                startActivity(intent);
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
