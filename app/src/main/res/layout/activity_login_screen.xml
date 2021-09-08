@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login.LoginScreen"
     android:orientation="vertical"
-    android:background="#F6F6F3"
+    android:background="@drawable/back1"
     android:padding="20dp">
 
 
@@ -16,19 +16,19 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="LOGIN"
-        android:textColor="#000"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="50dp"/>
     <TextView
-        android:textColor="#070707"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign in to continue"
         android:textSize="20sp"/>
     <LinearLayout
-        android:background="#fff"
+        android:background="#00000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -39,15 +39,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/username"
-            app:boxStrokeWidth="2dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           app:hintTextColor="@color/white"
+            android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:textColorHint="@color/black">
+                android:textColorHint="@color/white"
+                android:textColor="@color/white">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -57,6 +58,8 @@
             android:id="@+id/password"
             app:passwordToggleEnabled="true"
             app:boxStrokeWidth="2dp"
+            app:hintTextColor="@color/white"
+            android:textColorHint="@color/white"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -64,8 +67,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:textColorHint="@color/white"
                 android:inputType="textPassword"
-                android:textColor="#000">
+                android:textColor="@color/white">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -76,9 +80,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:buttonTint="@color/white"
+        android:minHeight="48dp"
         android:text="Remember me"
-        android:textColor="@color/black"
-        android:buttonTint="@color/black"/>
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/forget_Password"
