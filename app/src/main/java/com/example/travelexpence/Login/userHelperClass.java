@@ -6,9 +6,8 @@ public class userHelperClass {
     }
 
     String fullName,userName,password,email;
-    public userHelperClass(String fullName, String userName, String password, String email) {
+    public userHelperClass(String fullName, String password, String email) {
         this.fullName = fullName;
-        this.userName = userName;
         this.password = password;
         this.email = email;
     }
@@ -19,10 +18,6 @@ public class userHelperClass {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
-
-    public String getUserName() {
-        return userName;
     }
 
     public void setUserName(String userName) {

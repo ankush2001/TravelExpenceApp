@@ -27,7 +27,7 @@ public class SignUpScreen extends AppCompatActivity {
     private DatabaseReference mDatabase;
     ImageView back;
     Button alreadyAccount,regButton;
-    TextInputLayout regName,regUsername,regEmail,regPassword;
+    TextInputLayout regName,regEmail,regPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +35,13 @@ public class SignUpScreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progress_bar);
+
         regName = findViewById(R.id.reg_name);
-        regUsername= findViewById(R.id.reg_username);
         regEmail = findViewById(R.id.reg_email);
+
         regPassword = findViewById(R.id.reg_password);
         regButton=findViewById(R.id.signUp);
+
         back=findViewById(R.id.back_icon);
         alreadyAccount = findViewById(R.id.alreadyAcc);
         alreadyAccount.setOnClickListener(new View.OnClickListener() {
@@ -69,24 +71,7 @@ public class SignUpScreen extends AppCompatActivity {
             return true;
         }
     }
-    private Boolean validateUserName(){
-        String val = regUsername.getEditText().getText().toString();
-        String noWhiteSpaces = "^[A-Za-z]\\w{5,29}$";
-        if(val.isEmpty()){
-            regUsername.setError("Field cannot be empty");
-            return false;
-        }else if(val.length()>=15){
-            regUsername.setError("Username too long");
-            return false;
-        }else if(!val.matches(noWhiteSpaces)){
-            regUsername.setError("Spaces Not Allowed");
-            return false;
-        } else {
-            regUsername.setError(null);
-            regUsername.setErrorEnabled(false);
-            return true;
-        }
-    }
+
     private Boolean validateEmail(){
         String val = regEmail.getEditText().getText().toString();
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -124,13 +109,12 @@ public class SignUpScreen extends AppCompatActivity {
     }
 
     public void registerUser(View view){
-        if(!validateEmail() | !validateName() | !validateUserName() | !validatePassword()){
+        if(!validateEmail() | !validateName() | !validatePassword()){
             return;
         }
         mDatabase=FirebaseDatabase.getInstance().getReference();
         //get all the values
         String fullName = regName.getEditText().getText().toString();
-        String userName = regUsername.getEditText().getText().toString();
         String email = regEmail.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
 
@@ -140,8 +124,8 @@ public class SignUpScreen extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    userHelperClass helperClass = new userHelperClass(fullName,userName,password,email);
-                    mDatabase.child("users").child(userName).setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    userHelperClass helperClass = new userHelperClass(fullName,password,email);
+                    mDatabase.child("user").child(fullName).setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){

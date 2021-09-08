@@ -53,26 +53,7 @@
                 android:inputType="text"
                 android:textColor="#000" />
     </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reg_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="User Name"
-            app:counterEnabled="true"
-            app:counterMaxLength="15"
-            app:boxStrokeWidth="2dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="@color/black"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="#000"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/reg_email"
             android:layout_width="match_parent"
