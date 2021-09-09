@@ -11,7 +11,7 @@ import com.example.travelexpence.Login.LoginScreen;
 import com.example.travelexpence.R;
 
 public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_SCREEN = 5000;
+    private static int SPLASH_SCREEN = 2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, LoginScreen.class);
+                Intent intent = new Intent(MainActivity.this, main_screen.class);
                 startActivity(intent);
                 finish();
             }

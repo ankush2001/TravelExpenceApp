@@ -3,53 +3,63 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home"/>
+            android:title="Home"
+            android:icon="@drawable/home_icon"/>
 
         <item
-        android:id="@+id/nav_fligts"
-        android:title="Fligts"/>
+        android:id="@+id/nav_flights"
+        android:title="Flights"
+            android:icon="@drawable/flight"/>
 
         <item
         android:id="@+id/nav_cab"
-        android:title="Cabs"/>
+        android:title="Cabs"
+            android:icon="@drawable/icon_cab"/>
 
         <item
         android:id="@+id/nav_hotels"
-        android:title="Hotels"/>
+        android:title="Hotels"
+            android:icon="@drawable/icon_hotel"/>
 
     </group>
-    <group android:checkableBehavior="single">
+
         <item
             android:title="Profile">
 
         <menu>
+            <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_login"
-                android:title="Login"/>
+                android:title="Login"
+                android:icon="@drawable/login_icon"/>
 
 
             <item
                 android:id="@+id/nav_profile"
-                android:title="Profile"/>
+                android:title="Profile"
+                android:icon="@drawable/user_profile"/>
 
             <item
                 android:id="@+id/nav_logout"
-                android:title="Logout"/>
+                android:title="Logout"
+                android:icon="@drawable/log_out_icon"/>
+            </group>
         </menu>
         </item>
 
-    </group>
-
     <item android:title="Communication">
         <menu>
+            <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_share"
-                android:title="Share"/>
+                android:title="Share"
+                android:icon="@drawable/share_icon"/>
 
 
             <item
                 android:id="@+id/nav_rate_us"
                 android:title="Rate Us"/>
+            </group>
         </menu>
     </item>
 </menu>
