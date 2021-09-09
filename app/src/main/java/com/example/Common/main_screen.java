@@ -7,12 +7,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
 
+import com.example.travelexpence.Login.LoginScreen;
 import com.example.travelexpence.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -52,6 +54,14 @@ public class main_screen extends AppCompatActivity implements NavigationView.OnN
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_login:
+                startActivity(new Intent(main_screen.this, LoginScreen.class));
+                break;
+            case R.id.nav_home:
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }
