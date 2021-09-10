@@ -21,12 +21,14 @@
         android:textStyle="bold"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="50dp"/>
+
     <TextView
-        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
         android:text="Login in to continue"
-        android:textSize="20sp"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
     <LinearLayout
         android:background="#00000000"
         android:layout_width="match_parent"
@@ -48,9 +50,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/round_background"
                 android:hint="@string/email"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white">
+                android:textColor="@color/white"
+                android:textColorHint="@color/white">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:background="@drawable/round_background"
                 android:textColorHint="@color/white"
                 android:inputType="textPassword"
                 android:textColor="@color/white">

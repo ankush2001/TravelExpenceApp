@@ -30,6 +30,8 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
+
+
         progressBar = findViewById(R.id.progress_bar);
         buttonSignUp = findViewById(R.id.signUpButton);
         forgetPassword=findViewById(R.id.forget_Password);
