@@ -40,7 +40,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
+            android:id="@+id/email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
            app:hintTextColor="@color/white"
             app:startIconDrawable="@drawable/email_icon"
@@ -53,7 +53,7 @@
                 android:background="@drawable/round_background"
                 android:hint="@string/email"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white">
+                android:inputType="textEmailAddress">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -102,7 +102,7 @@
         android:layout_gravity="right"
         android:elevation="0dp"
         android:layout_margin="5dp"
-        android:textColor="#000"/>
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/go"
@@ -126,7 +126,7 @@
         android:background="#00000000"
         android:elevation="0dp"
         android:text="NEW USER? SIGN UP"
-        android:textColor="#000" />
+        android:textColor="@color/white" />
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"

@@ -51,6 +51,7 @@ public class SignUpScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SignUpScreen.this, LoginScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +59,7 @@ public class SignUpScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SignUpScreen.this, LoginScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -52,6 +52,7 @@ public class ForgetPassword extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ForgetPassword.this, LoginScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -90,4 +91,8 @@ public class ForgetPassword extends AppCompatActivity {
             });
     }
 
+//    @Override
+//    public void onBackPressed() {
+//
+//    }
 }

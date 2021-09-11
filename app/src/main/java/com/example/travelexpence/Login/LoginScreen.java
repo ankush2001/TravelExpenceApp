@@ -37,7 +37,7 @@ public class LoginScreen extends AppCompatActivity {
         forgetPassword=findViewById(R.id.forget_Password);
 
         Password = findViewById(R.id.password);
-        Email = findViewById(R.id.username);
+        Email = findViewById(R.id.email);
 
         login = findViewById(R.id.go);
         mAuth = FirebaseAuth.getInstance();
@@ -49,6 +49,7 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginScreen.this, ForgetPassword.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -57,6 +58,7 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginScreen.this, SignUpScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -116,10 +118,13 @@ public class LoginScreen extends AppCompatActivity {
                         // redirect to user Profile
                         Intent intent = new Intent(LoginScreen.this, main_screen.class);
                         startActivity(intent);
+                        finish();
+                        Toast.makeText(LoginScreen.this,"Login Successful",Toast.LENGTH_LONG).show();
+
                         progressBar.setVisibility(View.GONE);
 
                     }else{
-                        Toast.makeText(LoginScreen.this,"Login failed! Please check your password or Username",Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginScreen.this,"Login failed! Please check your password or Email",Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
                     }
             }

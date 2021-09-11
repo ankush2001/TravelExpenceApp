@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:text="Already have account? login"
-        android:textColor="#000"
+        android:textColor="@color/white"
         android:textStyle="bold" />
     <ProgressBar
         android:id="@+id/progress_bar"
