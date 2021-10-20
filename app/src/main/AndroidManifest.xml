@@ -8,12 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TravelExpence"
-        >
+        android:theme="@style/Theme.TravelExpence" >
+        <activity
+            android:name="com.example.Common.Flights"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Common.Cabs"
+            android:exported="true" />
         <activity
             android:name="com.example.Common.main_screen"
             android:exported="true" />
-
         <activity
             android:name=".Login.ForgetPassword"
             android:exported="true" />

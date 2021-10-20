@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.Common.main_screen"
+    tools:context="com.example.Common.Flights"
     tools:openDrawer="start">
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -15,11 +16,14 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu" />
+        app:menu="@menu/main_menu">
+
+    </com.google.android.material.navigation.NavigationView>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,7 +46,7 @@
                 android:layout_width="229dp"
                 android:layout_height="46dp"
                 android:gravity="center"
-                android:text="DASHBOARD"
+                android:text="@string/flights"
                 android:textColor="@color/black"
                 android:textSize="35dp"
                 android:textStyle="bold"
@@ -56,5 +60,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.travelexpence.FragmentFlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

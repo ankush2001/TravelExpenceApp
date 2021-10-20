@@ -2,7 +2,6 @@ package com.example.Common;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -18,18 +17,16 @@ import com.example.travelexpence.Login.LoginScreen;
 import com.example.travelexpence.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class main_screen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class Flights extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
-        NavigationView navigationView;
-        Toolbar toolbar;
-        TextView textView;
-        Menu menu;
+    NavigationView navigationView;
+    Toolbar toolbar;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_flights);
         textView = findViewById(R.id.dash_board);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -43,8 +40,6 @@ public class main_screen extends AppCompatActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(this);
 
     }
-
-    @Override
     public void onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -58,17 +53,15 @@ public class main_screen extends AppCompatActivity implements NavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_login:
-                startActivity(new Intent(main_screen.this, LoginScreen.class));
+                startActivity(new Intent(Flights.this, LoginScreen.class));
                 break;
             case R.id.nav_home:
+                startActivity(new Intent(Flights.this,main_screen.class));
                 break;
             case R.id.nav_flights:
-                startActivity(new Intent(main_screen.this,Flights.class));
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-    }
+}
