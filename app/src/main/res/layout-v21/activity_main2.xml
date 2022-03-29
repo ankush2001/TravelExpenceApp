@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@drawable/back1"
     tools:context="com.example.Common.main_screen"
     tools:openDrawer="start">
 
@@ -14,8 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:visibility="gone"
         app:headerLayout="@layout/header"
-        app:menu="@menu/main_menu" />
+        app:menu="@menu/main_menu">
+
+    </com.google.android.material.navigation.NavigationView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,9 +27,12 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:background="@color/light_blue_600">
 
             <androidx.appcompat.widget.Toolbar
+
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -35,26 +42,43 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+
                 app:navigationIcon="@drawable/ic_baseline_menu_24" />
 
             <TextView
-                android:id="@+id/dash_board"
+                android:id="@+id/dashboard"
                 android:layout_width="229dp"
                 android:layout_height="46dp"
                 android:gravity="center"
                 android:text="DASHBOARD"
-                android:textColor="@color/black"
-                android:textSize="35dp"
+                android:textColor="#040404"
+                android:textSize="35sp"
                 android:textStyle="bold"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="@+id/toolbar"
                 app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <ViewFlipper
+            android:id="@+id/flipper"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp" />
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
