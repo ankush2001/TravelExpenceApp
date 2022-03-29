@@ -93,7 +93,7 @@
             android:background="@drawable/round_background"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="Predict Flight Fare"/>
+            android:text="Click here To Predict Flight Fare"/>
 
     </RelativeLayout>
 
