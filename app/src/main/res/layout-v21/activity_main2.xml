@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:visibility="gone"
+        android:visibility="visible"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu">
 
@@ -47,14 +47,15 @@
 
             <TextView
                 android:id="@+id/dashboard"
-                android:layout_width="229dp"
+                android:layout_width="240dp"
                 android:layout_height="46dp"
+                android:fontFamily="serif"
                 android:gravity="center"
-                android:text="DASHBOARD"
-                android:textColor="#040404"
+                android:text="@string/dashboard"
+                android:textColor="#3F51B5"
                 android:textSize="35sp"
-                android:textStyle="bold"
 
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
@@ -81,19 +82,19 @@
             android:layout_marginBottom="10dp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/predict"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/flipper"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="50dp"
-            android:background="@drawable/round_background"
+           android:layout_marginLeft="65dp"
+            android:layout_marginTop="150dp"
+            android:padding="10dp"
+            android:background="@drawable/fill_background"
             android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Click here To Predict Flight Fare"
             android:textColor="@color/white"
-            android:text="Click here To Predict Flight Fare"/>
+            tools:ignore="TextContrastCheck" />
 
     </RelativeLayout>
 
